@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "foldkit",
+  "version": "1.0.0",
+  "description": "foldkit sidebar on every page · κ classifier · F(S⃗) fingerprint · estate context menu",
+  "author": "AI-Native Solutions",
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["foldkit.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "foldkit",
+    "default_icon": {
+      "16": "icons/icon-16.svg",
+      "48": "icons/icon-48.svg",
+      "128": "icons/icon-128.svg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.svg",
+    "48": "icons/icon-48.svg",
+    "128": "icons/icon-128.svg"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "toggle-sidebar": {
+      "suggested_key": { "default": "Ctrl+Shift+F" },
+      "description": "Toggle foldkit sidebar"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "foldkit@ai-nativesolutions.com",
+      "strict_min_version": "115.0"
+    }
+  }
+}

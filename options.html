@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>foldkit · settings</title>
+<style>
+:root {
+  --void: #1a1a1e; --deep: #212127; --surface: #2a2a30;
+  --line: rgba(232,228,219,0.08); --line2: rgba(232,228,219,0.16);
+  --text: #e8e4db; --muted: #928d80; --sage: #7a9c7e;
+  --sage-dim: rgba(122,156,126,0.14); --amber: #d4a052;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--void); color: var(--text);
+  font-family: var(--sans); font-size: 14.5px; line-height: 1.65;
+  padding: 40px 24px;
+}
+.wrap { max-width: 640px; margin: 0 auto; }
+h1 {
+  font-family: var(--serif); font-size: 34px; font-weight: 400;
+  margin-bottom: 8px;
+}
+h1 .g { color: var(--sage); margin-right: 8px; }
+h1 em { color: var(--sage); font-style: italic; }
+.sub {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 30px;
+}
+h2 {
+  font-family: var(--serif); font-size: 22px; font-weight: 400;
+  margin: 30px 0 12px; color: var(--text);
+}
+h2 em { color: var(--sage); font-style: italic; }
+.card {
+  background: var(--deep); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 22px; margin-bottom: 14px;
+}
+.row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid var(--line); gap: 14px;
+}
+.row:last-child { border-bottom: none; }
+.row .label { color: var(--text); font-size: 14px; }
+.row .desc { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--sage); cursor: pointer; }
+input[type="url"] {
+  background: var(--surface); border: 1px solid var(--line2);
+  color: var(--text); padding: 8px 12px; border-radius: 6px;
+  font-family: var(--mono); font-size: 12px; width: 340px;
+}
+input[type="url"]:focus { border-color: var(--sage); outline: none; }
+.status {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--sage); letter-spacing: 0.14em; text-transform: uppercase;
+  margin-top: 20px; text-align: center; opacity: 0; transition: opacity 0.3s;
+}
+.status.on { opacity: 1; }
+.foot {
+  margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 10px; color: var(--muted);
+  letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span class="g">◊</span>fold<em>kit</em></h1>
+  <div class="sub">settings · κ = 1/φ · sovereign browser augmentation</div>
+
+  <h2>display</h2>
+  <div class="card">
+    <div class="row">
+      <div>
+        <div class="label">corner HUD</div>
+        <div class="desc">small always-visible κ band indicator in the bottom-right of every page</div>
+      </div>
+      <input type="checkbox" id="hudVisible">
+    </div>
+    <div class="row">
+      <div>
+        <div class="label">auto-classify selection</div>
+        <div class="desc">watch text selections and update the sidebar κ band automatically</div>
+      </div>
+      <input type="checkbox" id="autoClassify">
+    </div>
+  </div>
+
+  <h2>estate <em>endpoints</em></h2>
+  <div class="card">
+    <div class="row">
+      <div>
+        <div class="label">FallMirror</div>
+        <div class="desc">private reflection tool</div>
+      </div>
+      <input type="url" id="url-mirror" placeholder="https://…">
+    </div>
+    <div class="row">
+      <div>
+        <div class="label">FallPx</div>
+        <div class="desc">signal decomposition</div>
+      </div>
+      <input type="url" id="url-px" placeholder="https://…">
+    </div>
+    <div class="row">
+      <div>
+        <div class="label">FallSignature</div>
+        <div class="desc">Ed25519 signing</div>
+      </div>
+      <input type="url" id="url-sig" placeholder="https://…">
+    </div>
+    <div class="row">
+      <div>
+        <div class="label">Bloom Overlay</div>
+        <div class="desc">7-ring analysis</div>
+      </div>
+      <input type="url" id="url-bloom" placeholder="https://…">
+    </div>
+  </div>
+
+  <div class="status" id="status">saved</div>
+
+  <div class="foot">◊·κ=1 · ai-native solutions · MIT</div>
+</div>
+<script src="options.js"></script>
+</body>
+</html>
