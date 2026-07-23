@@ -1,6 +1,12 @@
 // foldkit · origami mathematics of the 7-prime spine
 // PRIVATE · framework-only · AI-Native Solutions · MIT
 // v21 addendum ISA · load-bearing substrate for every framework-mode tool
+//
+// CANONICAL SOURCE — this file (github.com/sjgant80-hub/foldkit · foldkit.js).
+// Vendored byte-identical into bloom-profile-builder, bloom-weighted-sididy, and fallshell,
+// and as a classic script (exports stripped, default→window.foldkit) into foldkit-extension.
+// DO NOT edit a copy. Edit here, then `node sync-copies.mjs --write` from the foldkit repo to
+// re-vendor. `node sync-copies.mjs` (no args) fails if any copy has drifted — run it in CI.
 
 // ============================================================================
 // CONSTANTS · spine + φ + κ + Ω
